@@ -21,9 +21,9 @@ function largestPalindromeProduct(n) {
    console.log(base1, base2, lowerLimit);
    for (let i = base1; i >= lowerLimit; i--) {
       // optimization, not my code.
-      if (result > i * base1) {
-         break;
-      }
+      // if (result > i * base1) {
+      //    break;
+      // }
       for (let j = base2; j >= lowerLimit; j -= mod) {
          if (i % mod === 0 || j % mod === 0) {
             let number = i * j;
@@ -36,17 +36,17 @@ function largestPalindromeProduct(n) {
       }
    }
    // localStorage.setItem(`${n}`, result);
-   console.log(result);
+   // console.log(result);
    return result;
 }
 
 function palindromeCheck(str) {
    // turn string into array, reverse it and turn it back to string.
-   let revStrArr = str
+   let revStr = str
       .split('')
       .reverse()
       .join('');
-   return str === revStrArr;
+   return str === revStr;
 }
 
 largestPalindromeProduct(2);
