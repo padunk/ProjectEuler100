@@ -4,12 +4,11 @@ Find the sum of all the multiples of 3 or 5 below the provided parameter value n
 */
 
 function multiplesOf3and5(number) {
-   let multiples = [];
+   let result = 0;
    for (let index = 1; index < number; index++) {
       if (index % 3 === 0 || index % 5 === 0) {
-         multiples.push(index);
+         result +=index;
       }
    }
-   let result = multiples.reduce((s, n) => s += n, 0);
    return result;
 }
