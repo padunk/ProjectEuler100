@@ -47,45 +47,6 @@ function largestGridProduct(arr, limit = 4) {
          }
       }
    }
-
-   // vertical
-   // for (let i = 0; i < lenLimit; i++) {
-   //    for (let j = 0; j < len; j++) {
-   //       let mult = arr[i][j] * arr[i + 1][j] * arr[i + 2][j] * arr[i + 3][j];
-   //       mult > largest && (largest = mult);
-   //    }
-   // }
-
-   // horizontal
-   // for (let i = 0; i < len; i++) {
-   //    for (let j = 0; j < lenLimit; j++) {
-   //       let mult = arr[i][j] * arr[i][j + 1] * arr[i][j + 2] * arr[i][j + 3];
-   //       mult > largest ? (largest = mult) : '';
-   //    }
-   // }
-
-   // diagonal
-   // for (let i = 0; i < lenLimit; i++) {
-   //    for (let j = 0; j < lenLimit; j++) {
-   //       let mult =
-   //          arr[i][j] *
-   //          arr[i + 1][j + 1] *
-   //          arr[i + 2][j + 2] *
-   //          arr[i + 3][j + 3];
-   //       mult > largest ? (largest = mult) : '';
-   //    }
-   // }
-
-   // for (let i = 0; i < lenLimit; i++) {
-   //    for (let j = limit - 1; j < len; j++) {
-   //       let mult =
-   //          arr[i][j] *
-   //          arr[i + 1][j - 1] *
-   //          arr[i + 2][j - 2] *
-   //          arr[i + 3][j - 3];
-   //       mult > largest ? (largest = mult) : '';
-   //    }
-   // }
    console.log(largest);
    return largest;
 }
