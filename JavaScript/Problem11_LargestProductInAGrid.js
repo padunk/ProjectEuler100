@@ -16,38 +16,45 @@ function largestGridProduct(arr, limit = 4) {
 
    for (let i = 0; i < len; i++) {
       for (let j = 0; j < len; j++) {
-         let mult;
+         let mult = 1;
          // right diagonal
          if (i < lenLimit && j < lenLimit) {
-            mult =
-               arr[i][j] *
-               arr[i + 1][j + 1] *
-               arr[i + 2][j + 2] *
-               arr[i + 3][j + 3];
-            mult > largest && (largest = mult);
+            let x = 0;
+            while (x < limit) {
+               mult *= arr[i][j];
+               i++; j++; x++;
+            }
+            largest = Math.max(largest, mult);
          }
          // left diagonal
          if (i < lenLimit && j > limit - 1) {
-            mult =
-               arr[i][j] *
-               arr[i + 1][j - 1] *
-               arr[i + 2][j - 2] *
-               arr[i + 3][j - 3];
-            mult > largest && (largest = mult);
+            let x = 0;
+            while (x < limit) {
+               mult *= arr[i][j];
+               i++; j--; x++;
+            }
+            largest = Math.max(largest, mult);
          }
          // vertical
          if (i < lenLimit) {
-            mult = arr[i][j] * arr[i + 1][j] * arr[i + 2][j] * arr[i + 3][j];
-            mult > largest && (largest = mult);
+            let x = 0;
+            while (x < limit) {
+               mult *= arr[i][j];
+               i++; x++;
+            }
+            largest = Math.max(largest, mult);
          }
          // horizontal
          if (j < lenLimit) {
-            mult = arr[i][j] * arr[i][j + 1] * arr[i][j + 2] * arr[i][j + 3];
-            mult > largest && (largest = mult);
+            let x = 0;
+            while (x < limit) {
+               mult *= arr[i][j];
+               j++; x++;
+            }
+            largest = Math.max(largest, mult);
          }
       }
    }
-   console.log(largest);
    return largest;
 }
 
